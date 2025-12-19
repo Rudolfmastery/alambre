@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eBook: Maxi Arete de Cascada - Guía Maestra</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+
+        /* CONFIGURACIÓN ESPECIAL PARA PDF EBOOK */
+        @media print {
+            @page { margin: 0; size: auto; }
+            body { background-color: white !important; }
+            
+            /* Fuerza el ancho de celular en el PDF */
+            header, main, section, .max-w-6xl, .max-w-4xl, .max-w-3xl {
+                max-width: 450px !important;
+                margin: 0 auto !important;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+
+            /* Evita que los pasos se corten entre páginas */
+            .step-block, section, header {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                display: block;
+                margin-bottom: 40px !important;
+            }
+
+            /* Ocultar botón de navegación en el PDF */
+            .nav-button { display: none !important; }
+            
+            /* Ajuste de imágenes para PDF */
+            img { max-width: 100% !important; height: auto !important; border-radius: 16px !important; }
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <header class="max-w-6xl mx-auto px-6 py-12 border-b border-gray-100">
+        <div class="step-block">
+            <h1 class="text-4xl font-extrabold text-gray-900 leading-tight mb-8 text-left">
+                Maxi Arete de Cascada en Cristal
+            </h1>
+            <p class="text-lg text-gray-700 text-left mb-8 leading-relaxed">
+                Este proyecto es la prueba máxima de paciencia y precisión. Aprenderás a integrar tres técnicas fundamentales: martillado para endurecer estructuras, tejido interno con pedrería y acabados de seguridad invisibles.
+            </p>
+            <figure>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/0.webp" class="w-full h-80 object-cover rounded-3xl shadow-xl" alt="Proyecto Finalizado">
+                <figcaption class="text-sm text-gray-500 mt-4 text-left flex items-start gap-2 italic">
+                    <span class="text-amber-500">💡</span>
+                    <span>Un maxi arete exitoso debe ser visualmente imponente pero extremadamente liviano para no cansar el lóbulo de la oreja</span>
+                </figcaption>
+            </figure>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="space-y-20">
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">01</span>
+                    <h3 class="text-xl font-bold">Medición y Corte de Estructura</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/1.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 1">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Corta dos trozos de alambre calibre 18 de 15 centímetros cada uno. Este calibre grueso será la columna vertebral del arete. Usa una regla milimetrada para asegurar que ambos tengan exactamente la misma longitud.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">02</span>
+                    <h3 class="text-xl font-bold">Alisado Térmico Manual</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/2.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 2">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Pasa el alambre varias veces por la pinza con punta de nylon. Esto no solo endereza el metal, sino que lo calienta ligeramente, haciéndolo más dócil para el siguiente paso de modelado.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">03</span>
+                    <h3 class="text-xl font-bold">Modelado del Marco Teardrop</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/3.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 3">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Con la pinza de punta redonda, crea una forma de gota. Los extremos deben cruzarse en la parte superior. Asegúrate de que ambas gotas sean idénticas superponiéndolas una sobre otra.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">04</span>
+                    <h3 class="text-xl font-bold">Endurecimiento por Martillado</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/4.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 4">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Coloca la base sobre el tas de acero y golpea suavemente la parte inferior de la gota con el martillo de joyero. Esto expande el metal y le otorga la rigidez necesaria para que no se deforme con el uso.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">05</span>
+                    <h3 class="text-xl font-bold">Inicio del Tejido Fino</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/5.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 5">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Toma el alambre calibre 26 (más delgado) y realiza cinco vueltas de anclaje en uno de los laterales de la estructura. Aprieta con la pinza plana para que el inicio del tejido sea invisible.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">06</span>
+                    <h3 class="text-xl font-bold">Carga de la Primera Piedra</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/6.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 6">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Inserta el primer cristal. Cruza el alambre hacia el lado opuesto del marco, manteniendo una tensión constante. El cristal debe quedar flotando justo en el centro del espacio interior.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">07</span>
+                    <h3 class="text-xl font-bold">Bloqueo de Seguridad</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/7.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 7">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Da dos vueltas completas al marco antes de colocar la siguiente piedra. Estos nudos de metal son los que mantienen la simetría y evitan que las piedras se agrupen en la parte inferior.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">08</span>
+                    <h3 class="text-xl font-bold">Construcción de la Trama</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/8.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 8">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Repite el proceso de carga y anclaje bajando gradualmente por la gota. Debes lograr una línea perfecta de cristales que sigan la curvatura del diseño original.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">09</span>
+                    <h3 class="text-xl font-bold">Sellado de Puntas</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/9.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 9">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Una vez completado el tejido, corta el excedente de alambre fino. Usa la pinza de punta plana para presionar el remate contra la estructura principal hasta que no se sienta al tacto.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">10</span>
+                    <h3 class="text-xl font-bold">Creación del Porta-Gancho</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/10.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 10">
+                <p class="text-gray-700 text-left text-base leading-relaxed">En el punto donde se cruzan los alambres calibre 18, realiza un bucle cerrado. Este será el punto de unión con el anzuelo del arete. Debe estar perfectamente centrado para que el arete no se incline.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">11</span>
+                    <h3 class="text-xl font-bold">Pulido de Asperezas</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/11.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 11">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Utiliza una lima fina de joyería para redondear todas las puntas cortadas. Este paso es el que diferencia un accesorio casero de una pieza de joyería profesional.</p>
+            </div>
+
+            <div class="step-block relative">
+                <div class="flex items-center gap-4 mb-6">
+                    <span class="text-5xl font-black text-amber-200">12</span>
+                    <h3 class="text-xl font-bold">Ensamble de Herraje Final</h3>
+                </div>
+                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/12.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 12">
+                <p class="text-gray-700 text-left text-base leading-relaxed">Abre el aro del gancho del arete lateralmente (nunca hacia afuera para no perder la forma), insértalo en el bucle superior y cierra con firmeza usando las pinzas de punta de cadena.</p>
+            </div>
+
+        </div>
+    </main>
+
+    <section class="py-16 px-6 bg-gray-900 text-white step-block">
+        <div class="max-w-3xl mx-auto text-left">
+            <h2 class="text-2xl font-bold mb-6">Proyecto de Certificación</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                    Elabora el par completo de Maxi Aretes. La simetría es el criterio de evaluación principal: coloca ambos aretes frente a un espejo y verifica que las piedras estén a la misma altura.
+                </p>
+                <div class="flex items-center gap-3 text-amber-400 font-bold">
+                    <i data-lucide="award" class="w-6 h-6"></i>
+                    <span>Toma una foto de los aretes puestos para tu portafolio</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-16 px-6 text-center bg-white nav-button">
+        <a href="#" class="inline-block bg-amber-600 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg">
+            Finalizar eBook →
+        </a>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,202 +1,802 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>eBook: Maxi Arete de Cascada - Guía Maestra</title>
+    <title>Reseteo del Sistema Nervioso | The Calm Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            // Paleta Premium Salud Mental (Violeta/Indigo + Dorado)
+                            dark: '#2E1A47',    /* Violeta Profundo (Autoridad) */
+                            primary: '#5B3E8E', /* Violeta Medio (Sanación) */
+                            light: '#F3F0F9',   /* Lavanda muy suave (Fondo) */
+                            accent: '#D4AF37',  /* Dorado (Valor/Premium) */
+                            text: '#333333',
+                        },
+                        alert: '#C0392B',
+                        success: '#27AE60',
+                    },
+                    fontFamily: {
+                        sans: ['Helvetica Neue', 'Arial', 'sans-serif'],
+                        serif: ['Georgia', 'serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(91, 62, 142, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        body { font-family: 'Inter', sans-serif; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-        h1, h2, h3 { font-family: 'Montserrat', sans-serif; }
+        html { scroll-behavior: smooth; }
+        
+        /* Listas personalizadas para que se vean ricas visualmente */
+        .check-list li { 
+            position: relative; 
+            padding-left: 2.5rem; 
+            margin-bottom: 1rem;
+            color: #4a5568;
+        }
+        .check-list li::before { 
+            content: '✓'; 
+            position: absolute; 
+            left: 0; 
+            top: 0;
+            background-color: #E8F5E9; 
+            color: #27AE60; 
+            font-weight: bold; 
+            width: 24px; 
+            height: 24px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-size: 0.8rem;
+        }
 
-        /* CONFIGURACIÓN ESPECIAL PARA PDF EBOOK */
-        @media print {
-            @page { margin: 0; size: auto; }
-            body { background-color: white !important; }
-            
-            /* Fuerza el ancho de celular en el PDF */
-            header, main, section, .max-w-6xl, .max-w-4xl, .max-w-3xl {
-                max-width: 450px !important;
-                margin: 0 auto !important;
-                padding-left: 20px !important;
-                padding-right: 20px !important;
-            }
+        .pain-list li { 
+            position: relative; 
+            padding-left: 2rem; 
+            margin-bottom: 0.8rem; 
+        }
+        .pain-list li::before { 
+            content: '✕'; 
+            position: absolute; 
+            left: 0; 
+            color: #C0392B; 
+            font-weight: bold; 
+        }
 
-            /* Evita que los pasos se corten entre páginas */
-            .step-block, section, header {
-                page-break-inside: avoid;
-                break-inside: avoid;
-                display: block;
-                margin-bottom: 40px !important;
-            }
-
-            /* Ocultar botón de navegación en el PDF */
-            .nav-button { display: none !important; }
-            
-            /* Ajuste de imágenes para PDF */
-            img { max-width: 100% !important; height: auto !important; border-radius: 16px !important; }
+        /* Acordeón de Módulos */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
         }
     </style>
 </head>
-<body class="bg-white text-gray-900">
+<body class="bg-gray-50 text-gray-800 antialiased font-sans leading-relaxed">
 
-    <header class="max-w-6xl mx-auto px-6 py-12 border-b border-gray-100">
-        <div class="step-block">
-            <h1 class="text-4xl font-extrabold text-gray-900 leading-tight mb-8 text-left">
-                Maxi Arete de Cascada en Cristal
-            </h1>
-            <p class="text-lg text-gray-700 text-left mb-8 leading-relaxed">
-                Este proyecto es la prueba máxima de paciencia y precisión. Aprenderás a integrar tres técnicas fundamentales: martillado para endurecer estructuras, tejido interno con pedrería y acabados de seguridad invisibles.
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+<header class="bg-brand-light border-b-4 border-brand-accent relative overflow-hidden" style="font-family: 'Poppins', sans-serif;">
+    
+    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+        <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <circle cx="2" cy="2" r="1" fill="#2E1A47"/>
+                </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)"/>
+        </svg>
+    </div>
+<div class="max-w-4xl mx-auto px-6 py-12 md:py-20 text-center relative z-10">
+    
+    <div class="flex justify-center mb-6">
+        <span class="inline-flex items-center justify-center bg-brand-dark text-white text-[10px] md:text-sm font-bold px-6 py-3 rounded-full uppercase tracking-wide leading-tight shadow-sm max-w-[90%] mx-auto">
+            <span class="text-center">⚠ Para personas con "Ansiedad Funcional" y Trauma</span>
+        </span>
+    </div>
+        
+        <h1 class="text-3xl md:text-5xl font-extrabold text-brand-dark mb-6 leading-tight md:leading-tight">
+            Deja de intentar sanar tu trauma solo con "fuerza de voluntad". 
+            <br class="hidden md:block"> 
+            <span class="inline-block text-brand-primary bg-brand-light px-2 py-1 mt-2 rounded-md">
+                Es hora de hablar el idioma de tu cuerpo.
+            </span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Descubre el <strong>Método Integrado de Regulación Somática</strong> para apagar el modo "Alerta", liberar el estrés acumulado por años y volver a sentirte segura en tu propia piel.
+        </p>
+        
+        <div class="rounded-2xl overflow-hidden shadow-2xl border-4 border-white mb-8 mx-auto max-w-3xl">
+            <img src="https://images.pexels.com/photos/2864808/pexels-photo-2864808.jpeg" alt="Mujer escribiendo y sanando" class="w-full h-auto object-cover">
+        </div>
+
+        <div class="bg-brand-dark text-white p-6 rounded-2xl mb-8 border-b-4 border-brand-accent shadow-lg text-center max-w-3xl mx-auto">
+            <h3 class="text-xl md:text-2xl font-bold mb-2">Quiero apoyarte en cada paso de tu camino...</h3>
+            <p class="text-gray-200 text-sm md:text-base leading-relaxed">
+                Si decides unirte hoy a la Academia, he incluido <span class="text-brand-accent font-bold">4 recursos exclusivos de mi biblioteca personal</span> que te ayudarán a acelerar tu proceso de calma. Están esperándote dentro.
             </p>
-            <figure>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/0.webp" class="w-full h-80 object-cover rounded-3xl shadow-xl" alt="Proyecto Finalizado">
-                <figcaption class="text-sm text-gray-500 mt-4 text-left flex items-start gap-2 italic">
-                    <span class="text-amber-500">💡</span>
-                    <span>Un maxi arete exitoso debe ser visualmente imponente pero extremadamente liviano para no cansar el lóbulo de la oreja</span>
-                </figcaption>
-            </figure>
         </div>
-    </header>
 
-    <main class="max-w-4xl mx-auto px-6 py-12">
-        <div class="space-y-20">
+        <div class="max-w-2xl mx-auto text-left space-y-6">
+            <p class="text-gray-700 text-lg leading-relaxed border-l-4 border-brand-accent pl-4 font-medium">
+                Este es un entrenamiento basado en evidencia, diseñado para que dejes de "analizar" tu historia y aprendas a <strong>liberarla de tu cuerpo</strong> para recuperar tu calma.
+            </p>
 
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">01</span>
-                    <h3 class="text-xl font-bold">Medición y Corte de Estructura</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/1.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 1">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Corta dos trozos de alambre calibre 18 de 15 centímetros cada uno. Este calibre grueso será la columna vertebral del arete. Usa una regla milimetrada para asegurar que ambos tengan exactamente la misma longitud.</p>
+            <div class="space-y-4 text-gray-600 italic text-base">
+                <p>¿Te sientes agotada de estar siempre en alerta o desconectada de todo lo que te rodea?</p>
+                <p>¿Sientes que ya "deberías estar bien", pero tu cuerpo sigue reaccionando con angustia, insomnio o presión en el pecho?</p>
             </div>
 
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">02</span>
-                    <h3 class="text-xl font-bold">Alisado Térmico Manual</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/2.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 2">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Pasa el alambre varias veces por la pinza con punta de nylon. Esto no solo endereza el metal, sino que lo calienta ligeramente, haciéndolo más dócil para el siguiente paso de modelado.</p>
-            </div>
+            <p class="text-brand-dark font-bold text-xl text-center py-4">
+                No es debilidad. Es tu sistema nervioso sobreviviendo como puede.
+            </p>
 
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">03</span>
-                    <h3 class="text-xl font-bold">Modelado del Marco Teardrop</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/3.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 3">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Con la pinza de punta redonda, crea una forma de gota. Los extremos deben cruzarse en la parte superior. Asegúrate de que ambas gotas sean idénticas superponiéndolas una sobre otra.</p>
+            <div class="text-gray-700 space-y-5 leading-relaxed">
+                <p>Imagina sentirte, al fin, <strong>segura en tu propio cuerpo</strong>. Poder identificar y regular tus emociones sin tener que reprimirte ni juzgarte por lo que sientes.</p>
+                <p>El trauma no se supera con simple "fuerza de voluntad"; se transforma dándole a tu biología la seguridad y las herramientas adecuadas para soltar una carga que tú no elegiste llevar.</p>
             </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">04</span>
-                    <h3 class="text-xl font-bold">Endurecimiento por Martillado</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/4.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 4">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Coloca la base sobre el tas de acero y golpea suavemente la parte inferior de la gota con el martillo de joyero. Esto expande el metal y le otorga la rigidez necesaria para que no se deforme con el uso.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">05</span>
-                    <h3 class="text-xl font-bold">Inicio del Tejido Fino</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/5.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 5">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Toma el alambre calibre 26 (más delgado) y realiza cinco vueltas de anclaje en uno de los laterales de la estructura. Aprieta con la pinza plana para que el inicio del tejido sea invisible.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">06</span>
-                    <h3 class="text-xl font-bold">Carga de la Primera Piedra</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/6.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 6">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Inserta el primer cristal. Cruza el alambre hacia el lado opuesto del marco, manteniendo una tensión constante. El cristal debe quedar flotando justo en el centro del espacio interior.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">07</span>
-                    <h3 class="text-xl font-bold">Bloqueo de Seguridad</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/7.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 7">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Da dos vueltas completas al marco antes de colocar la siguiente piedra. Estos nudos de metal son los que mantienen la simetría y evitan que las piedras se agrupen en la parte inferior.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">08</span>
-                    <h3 class="text-xl font-bold">Construcción de la Trama</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/8.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 8">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Repite el proceso de carga y anclaje bajando gradualmente por la gota. Debes lograr una línea perfecta de cristales que sigan la curvatura del diseño original.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">09</span>
-                    <h3 class="text-xl font-bold">Sellado de Puntas</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/9.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 9">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Una vez completado el tejido, corta el excedente de alambre fino. Usa la pinza de punta plana para presionar el remate contra la estructura principal hasta que no se sienta al tacto.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">10</span>
-                    <h3 class="text-xl font-bold">Creación del Porta-Gancho</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/10.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 10">
-                <p class="text-gray-700 text-left text-base leading-relaxed">En el punto donde se cruzan los alambres calibre 18, realiza un bucle cerrado. Este será el punto de unión con el anzuelo del arete. Debe estar perfectamente centrado para que el arete no se incline.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">11</span>
-                    <h3 class="text-xl font-bold">Pulido de Asperezas</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/11.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 11">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Utiliza una lima fina de joyería para redondear todas las puntas cortadas. Este paso es el que diferencia un accesorio casero de una pieza de joyería profesional.</p>
-            </div>
-
-            <div class="step-block relative">
-                <div class="flex items-center gap-4 mb-6">
-                    <span class="text-5xl font-black text-amber-200">12</span>
-                    <h3 class="text-xl font-bold">Ensamble de Herraje Final</h3>
-                </div>
-                <img src="https://cdn.jsdelivr.net/gh/Rudolfmastery/alambre@main/Maxiarretes/12.webp" class="w-full rounded-2xl mb-6 shadow-md" alt="Paso 12">
-                <p class="text-gray-700 text-left text-base leading-relaxed">Abre el aro del gancho del arete lateralmente (nunca hacia afuera para no perder la forma), insértalo en el bucle superior y cierra con firmeza usando las pinzas de punta de cadena.</p>
-            </div>
-
         </div>
-    </main>
+        
+        <p class="text-sm text-gray-400 italic mt-8">
+            Desliza hacia abajo para conocer el método paso a paso 👇
+        </p>
+    </div>
+</header>
 
-    <section class="py-16 px-6 bg-gray-900 text-white step-block">
-        <div class="max-w-3xl mx-auto text-left">
-            <h2 class="text-2xl font-bold mb-6">Proyecto de Certificación</h2>
-            <div class="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
-                    Elabora el par completo de Maxi Aretes. La simetría es el criterio de evaluación principal: coloca ambos aretes frente a un espejo y verifica que las piedras estén a la misma altura.
-                </p>
-                <div class="flex items-center gap-3 text-amber-400 font-bold">
-                    <i data-lucide="award" class="w-6 h-6"></i>
-                    <span>Toma una foto de los aretes puestos para tu portafolio</span>
+    <section class="max-w-3xl mx-auto px-6 py-16 bg-white shadow-sm my-10 rounded-2xl border border-gray-100">
+        <h2 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-10">
+            ¿Sientes que eres "funcional" ante el mundo, pero por dentro estás al límite?
+        </h2>
+        
+        <div class="bg-red-50 border-l-4 border-alert p-6 md:p-8 rounded-r-xl mb-10">
+            <h3 class="font-bold text-alert mb-4 text-lg">Identifica si tu sistema nervioso está pidiendo ayuda:</h3>
+            <ul class="pain-list text-lg text-gray-700 space-y-4">
+                <li><strong>Fatiga Inexplicable:</strong> Te levantas cansada aunque hayas dormido 8 horas (tu cuerpo gasta energía en estar alerta).</li>
+                <li><strong>Reactividad Explosiva:</strong> Explotas por cosas pequeñas o te dan ganas de llorar de la nada.</li>
+                <li><strong>Neblina Mental (Disociación):</strong> Sientes desconexión, como si vieras tu vida a través de un vidrio o una pantalla.</li>
+                <li><strong>Sobreanálisis Crónico:</strong> Ya entiendes <em>por qué</em> te pasa esto (conoces tu historia), pero tu cuerpo sigue sintiendo pánico físico.</li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <p class="font-bold text-2xl text-brand-dark mb-2">No es flojera. No es que estés "rota".</p>
+            <p class="text-xl text-gray-600">Es un <span class="bg-yellow-100 px-2 font-bold text-brand-primary">Sistema Nervioso Desregulado</span>.</p>
+        </div>
+    </section>
+
+    <!-- Sección Actualizada: Fondo #2E1A47 sin línea ondulada -->
+    <section class="bg-[#2E1A47] py-20 text-white relative border-t border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-2xl md:text-4xl font-bold text-center text-white mb-16 tracking-tight">
+            ¿Para quién esta diseñado este camino de sanación?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white/5 p-8 rounded-xl border border-white/5 hover:bg-white/10 transition duration-300">
+                    <h3 class="font-bold text-xl text-[#D4AF37] mb-3">La "Sobreviviente Funcional"</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Tienes trabajo, familia y cumples con todo. Pero sientes un vacío interno y un agotamiento que ningún café puede arreglar.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/5 hover:bg-white/10 transition duration-300">
+                    <h3 class="font-bold text-xl text-[#D4AF37] mb-3">Madres/Padres "Rompe-Ciclos"</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Viviste una infancia difícil y te aterra repetir esos patrones con tus hijos. Quieres criar desde la calma, no desde el grito.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/5 hover:bg-white/10 transition duration-300">
+                    <h3 class="font-bold text-xl text-[#D4AF37] mb-3">Trauma Complejo o Acumulado</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ya sea un evento grande o años de estrés crónico y negligencia emocional. Tu cuerpo lleva la cuenta.</p>
+                </div>
+                <div class="bg-white/5 p-8 rounded-xl border border-white/5 hover:bg-white/10 transition duration-300">
+                    <h3 class="font-bold text-xl text-[#D4AF37] mb-3">Cansadas de la Terapia Convencional</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">Has hablado mucho de tu pasado. Entiendes tu historia intelectualmente, pero tus síntomas físicos no se van.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="py-16 px-6 text-center bg-white nav-button">
-        <a href="#" class="inline-block bg-amber-600 text-white px-10 py-5 rounded-xl font-bold text-lg shadow-lg">
-            Finalizar eBook →
-        </a>
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <div class="text-center mb-12">
+            <span class="text-brand-primary font-bold tracking-widest uppercase text-sm">Bienvenida a la academia</span>
+            <h2 class="text-4xl font-extrabold text-brand-dark mt-2 mb-6">Reseteo del Sistema Nervioso</h2>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                Más que un curso, es tu caja de herramientas para entender tu biología, calmar tu sistema y recuperar el control de tu vida.
+            </p>
+        </div>
+
+       <div class="bg-brand-light p-6 md:p-8 rounded-2xl border-2 border-brand-primary/20 relative mb-12 shadow-sm">
+    
+    <div class="absolute -top-4 left-0 right-0 mx-auto w-fit bg-brand-primary text-white px-6 py-1 rounded-full text-sm font-bold shadow-sm tracking-wider">
+        ES CIENCIA, NO OPINIÓN
+    </div>
+    
+    <div class="mt-6 text-center">
+        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">Basado en la investigación de los gigantes del trauma</h3>
+        <p class="text-gray-700 mb-8 max-w-2xl mx-auto text-sm md:text-base leading-relaxed">
+            Yo no inventé esta ciencia; mi trabajo ha sido sintetizar, simplificar y organizar las metodologías clínicas más efectivas del mundo para que tú puedas usarlas en casa. Este método integra las herramientas de:
+        </p>
     </div>
 
-    <script>
-        lucide.createIcons();
-    </script>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+        
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">Teoría Polivagal</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dr. Stephen Porges:</strong> La ciencia de la seguridad biológica y por qué tu cuerpo se "apaga".</p>
+            </div>
+        </div>
+
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">El Cuerpo Lleva la Cuenta</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dr. Bessel van der Kolk:</strong> Evidencia de cómo el trauma se aloja en los tejidos físicos.</p>
+            </div>
+        </div>
+
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">Experiencia Somática</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dr. Peter Levine:</strong> Técnicas para liberar la energía de supervivencia atrapada (sacudidas).</p>
+            </div>
+        </div>
+
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">Conexión Estrés-Enfermedad</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dr. Gabor Maté:</strong> Cómo el trauma emocional afecta tu salud inmunológica y física.</p>
+            </div>
+        </div>
+
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">Sistemas de la Familia Interna (IFS)</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dr. Richard Schwartz:</strong> El trabajo compasivo para sanar a tu "Niño Interior".</p>
+            </div>
+        </div>
+
+        <div class="flex items-start p-4 rounded-xl bg-white border border-gray-100 shadow-sm">
+            <span class="text-brand-accent text-2xl mr-3 leading-none mt-1">★</span> 
+            <div>
+                <p class="text-brand-dark font-bold text-xs uppercase tracking-wide mb-1">Regulación en la Práctica</p>
+                <p class="text-sm text-gray-600 leading-snug"><strong>Dra. Deb Dana:</strong> Ejercicios simples para navegar tu sistema nervioso día a día.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+    <div class="text-center mb-12">
+            <h3 class="text-2xl md:text-3xl font-bold text-brand-dark italic px-4">
+                Esto es lo que lograrás una vez implementes este método:
+            </h3>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">1</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Adiós al "Piloto Automático"</h4>
+                    <p class="text-gray-600 text-sm mt-1">Saldrás del estado de entumecimiento y desconexión para volver a sentir alegría y presencia real en tu día a día.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">2</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Calma en 3 Minutos</h4>
+                    <p class="text-gray-600 text-sm mt-1">Tendrás herramientas físicas concretas para bajar la ansiedad y surfear las emociones intensas sin ahogarte en ellas.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">3</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Dormir Profundo</h4>
+                    <p class="text-gray-600 text-sm mt-1">Aprenderás a decirle a tu cuerpo que "es seguro dormir", desactivando la alerta nocturna para vencer el insomnio.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">4</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Relaciones Sanas</h4>
+                    <p class="text-gray-600 text-sm mt-1">Dejarás de reaccionar desde tus heridas del pasado y empezarás a poner límites claros desde la calma y la seguridad.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">5</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Claridad Mental</h4>
+                    <p class="text-gray-600 text-sm mt-1">Al reducir el ruido de tu sistema nervioso, recuperarás la capacidad de enfocarte y tomar decisiones sin sentirte abrumada.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">6</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Vivir sin Culpa</h4>
+                    <p class="text-gray-600 text-sm mt-1">Comprenderás que tus reacciones eran biológicas, permitiéndote perdonarte y dejar de cargar con una historia que no elegiste.</p>
+                </div>
+            </div>
+            <div class="flex items-start px-2 md:col-span-2 md:max-w-md md:mx-auto">
+                <div class="w-12 h-12 rounded-full bg-brand-light flex items-center justify-center text-brand-primary font-bold text-xl mr-4 flex-shrink-0 shadow-sm">7</div>
+                <div>
+                    <h4 class="font-bold text-brand-dark text-lg">Energía Renovada</h4>
+                    <p class="text-gray-600 text-sm mt-1">Tu cuerpo dejará de gastar energía manteniéndote "a salvo" de peligros inexistentes, liberando vitalidad para tus proyectos.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center py-8 border-t border-dashed border-brand-primary/20">
+            <p class="text-brand-primary font-bold text-lg md:text-xl px-4">
+                Para lograr todo lo anterior, no iremos a ciegas. Este es el camino exacto que vamos a recorrer lección por lección:
+            </p>
+        </div>
+    </section>
+
+   <section class="bg-gray-50 py-16 border-t border-gray-200">
+    <div class="max-w-4xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-4 tracking-tight">El paso a paso para recuperar el control de tu sistema</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
+                Este temario ha sido diseñado para llevarte del <span class="font-bold text-brand-primary">Punto A (Caos y Desconexión)</span> al <span class="font-bold text-brand-primary">Punto B (Regulación y Control)</span>, integrando las metodologías de los mayores expertos mundiales.
+            </p>
+            <div class="mt-4 inline-flex items-center bg-brand-primary/10 text-brand-primary px-4 py-1 rounded-full text-sm font-bold">
+                ✨ 33 Lecciones • 7 Módulos de Transformación
+            </div>
+        </div>
+        
+        <div class="space-y-6">
+            
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 1</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">LA BASE: TU BIOLOGÍA NO ES TU ENEMIGA</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Quitar la culpa y entender tu mapa biológico.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">5 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">01</span> <div><strong>Bienvenida:</strong> No estás rota, estás sobreviviendo. Dejando de pelear con tu cuerpo.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">02</span> <div><strong>La Jerarquía Polivagal (Dr. Stephen Porges):</strong> Entendiendo tus 3 estados: Ventral, Simpático y Dorsal.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">03</span> <div><strong>Neurocepción:</strong> Por qué tu cuerpo ve peligro donde no lo hay y cómo recalibrar tu "detector de humo".</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">04</span> <div><strong>La conexión Estrés-Enfermedad (Dr. Gabor Maté):</strong> El precio físico de reprimir tu autenticidad.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">05</span> <div><strong>Creando tu "Ancla de Seguridad":</strong> Ejercicio para establecer tu base antes del trabajo profundo.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 2</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">BOTIQUÍN S.O.S. (ESTABILIZACIÓN INMEDIATA)</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Herramientas de "bombero" para apagar el fuego del pánico YA.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">5 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">06</span> <div><strong>El "Botón de Apagado" de 60 Segundos:</strong> Técnica de emergencia para bajar la taquicardia.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">07</span> <div><strong>Respiración Fisiológica vs. Forzada:</strong> El Suspiro Cíclico para calmar el pecho sin forzar.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">08</span> <div><strong>Orientación Visual (Dr. Stanley Rosenberg):</strong> Hackeando el cerebro reptiliano a través de los ojos.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">09</span> <div><strong>El Auto-Abrazo Somático:</strong> Técnica de contención para generar oxitocina manualmente.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">10</span> <div><strong>Protocolo "Grounding" 5-4-3-2-1:</strong> Cómo salir de la disociación y volver al presente.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 3</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">HACKEANDO EL NERVIO VAGO (EL HARDWARE)</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Tonificar el nervio encargado de tu paz interna.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">5 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">11</span> <div><strong>Mapeando tu Nervio Vago:</strong> Por qué es el "Rey" de tu tranquilidad.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">12</span> <div><strong>La Técnica del Sonido "Voo" (Dr. Peter Levine):</strong> Vibración vocal para liberar el pecho.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">13</span> <div><strong>Estimulación Auricular:</strong> Micro-masajes para activación parasimpática instantánea.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">14</span> <div><strong>Terapia de Frío Segura:</strong> Bio-hacking somático para resetear el estado de alerta.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">15</span> <div><strong>Reflejo Óculo-Cardíaco:</strong> Uso de movimientos oculares para bajar pulsaciones.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 4</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">PROCESANDO Y LIBERANDO EL TRAUMA</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Sacar la energía estancada del cuerpo de forma segura.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">5 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">16</span> <div><strong>Interocepción (Dr. Bessel van der Kolk):</strong> Aprendiendo a sentir tu cuerpo sin miedo.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">17</span> <div><strong>El Arte de la Péndulación (Dr. Peter Levine):</strong> Tocar el dolor sin retraumatizarte.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">18</span> <div><strong>Completando el Ciclo de Defensa:</strong> Cómo imitar la liberación biológica del estrés.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">19</span> <div><strong>Protocolo "Sacúdete" (Shaking):</strong> Liberación muscular de la energía de lucha atrapada.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">20</span> <div><strong>Liberación de Caderas:</strong> Soltando la tensión del Psoas (el músculo del alma).</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 5</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">EXPANDIENDO TU VENTANA DE TOLERANCIA</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Aumentar tu capacidad de manejar el estrés diario.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">4 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">21</span> <div><strong>Tu Mapa de Tolerancia:</strong> Identificando cuándo estás entrando en zona de peligro.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">22</span> <div><strong>Titulación:</strong> El poder de procesar tu historia gota a gota, sin desbordarte.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">23</span> <div><strong>Intuición vs. Respuesta de Trauma:</strong> Diferenciando el miedo del pasado del instinto real.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">24</span> <div><strong>Escritura Somática:</strong> Bajando el caos mental al cuerpo y luego al papel.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 6</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">ROMPIENDO CICLOS Y RELACIONES</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Sanar tus vínculos (IFS y Teoría del Apego).</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">5 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">25</span> <div><strong>Tus Partes Internas (IFS - Dr. Richard Schwartz):</strong> Conociendo a tus protectores.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">26</span> <div><strong>El Poder del "NO" (Dr. Gabor Maté):</strong> Por qué poner límites es salud física vital.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">27</span> <div><strong>Co-Regulación:</strong> Cómo usar la presencia segura de otros para calmarte.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">28</span> <div><strong>Sanando la Herida Materna/Paterna:</strong> Rompiendo patrones para no repetirlos.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">29</span> <div><strong>Comunicación Ventral:</strong> Hablar de tus necesidades desde la seguridad, no el ataque.</div></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                <div class="bg-brand-light p-5 border-l-8 border-brand-primary flex justify-between items-center">
+                    <div>
+                        <p class="text-[10px] font-bold text-brand-primary uppercase tracking-widest mb-1">Módulo 7</p>
+                        <h3 class="font-extrabold text-brand-dark text-lg md:text-xl italic">EL PLAN DE MANTENIMIENTO DE POR VIDA</h3>
+                        <p class="text-xs text-gray-500 mt-1 italic">Objetivo: Que tu calma sea sostenible y permanente.</p>
+                    </div>
+                    <span class="hidden md:block text-xs font-bold text-brand-primary bg-white border border-brand-primary/20 px-3 py-1 rounded-full uppercase">4 Lecciones</span>
+                </div>
+                <div class="p-6">
+                    <ul class="grid grid-cols-1 gap-4 text-sm md:text-base text-gray-700">
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">30</span> <div><strong>Rutina Matinal de Seguridad:</strong> 3 pasos al despertar para configurar tu día.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">31</span> <div><strong>Higiene del Sueño Somática:</strong> Enseñando a tu cuerpo que es seguro dormir.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">32</span> <div><strong>Buscando "Glimmers" (Dra. Deb Dana):</strong> Entrenando al cerebro para ver la seguridad.</div></li>
+                        <li class="flex items-start"><span class="text-brand-accent font-bold mr-3 mt-1">33</span> <div><strong>Plan de Recaída y Cierre:</strong> Qué hacer cuando todo sale mal para volver al centro.</div></li>
+                </div> </div>
+    </div>
+</section>
+
+<section class="py-12 bg-white">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+        <div class="inline-block p-1 mb-6 rounded-full bg-brand-light">
+            <div class="px-4 py-1 rounded-full border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest">
+                Esta Sera Tu Nueva Realidad
+            </div>
+        </div>
+        <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-6">Al recorrer este camino paso a paso...</h2>
+        <p class="text-gray-600 text-lg leading-relaxed">
+            No solo habrás aprendido teoría; habrás <span class="text-brand-primary font-bold">re-entrenado a tu cuerpo</span> para que la calma sea tu estado natural y no una excepción. Lograrás mirar tu historia sin que tu pecho se apriete, y caminarás con la seguridad de quien finalmente ha recuperado el control de su vida.
+        </p>
+        <p class="mt-6 text-brand-primary font-serif italic text-xl">
+            "Pero sé que el camino puede tener retos, y por eso no quiero que lo hagas sola... y he agregado estos regalos para ti"
+        </p>
+    </div>
+</section>
+
+<section class="bg-brand-dark py-16 text-white">
+    <div class="max-w-5xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center text-white mb-2">🎁 4 Regalos Exclusivos (Gratis con tu inscripción)</h2>
+        <p class="text-center text-gray-400 mb-12 italic">Diseñados para complementar tu proceso y darte resultados más rápidos.</p>
+            
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-brand-accent/30 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 relative">
+                <div class="absolute -top-3 -right-3 bg-success text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">GRATIS HOY</div>
+                <div class="flex-shrink-0">
+                    <img src="https://images.pexels.com/photos/3767374/pexels-photo-3767374.jpeg" class="w-24 h-24 rounded-xl object-cover border-2 border-brand-accent/50 shadow-md" alt="Audio">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="font-bold text-brand-accent text-lg leading-tight uppercase tracking-tight">BONO 1: Audios de Calma Instantánea (MP3)</h3>
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">Una colección de 5 pistas de audio guiadas con frecuencias binaurales para bajar tus pulsaciones en tiempo real en medio de una crisis.</p>
+                    <div class="mt-4 flex items-center justify-center sm:justify-start gap-2">
+                        <span class="text-gray-500 line-through text-xs font-bold">$27 USD</span>
+                        <span class="text-success text-sm font-extrabold uppercase tracking-tighter">¡Incluido Gratis!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-brand-accent/30 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 relative">
+                <div class="absolute -top-3 -right-3 bg-success text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">ACCESO INMEDIATO</div>
+                <div class="flex-shrink-0">
+                    <img src="https://images.pexels.com/photos/9159657/pexels-photo-9159657.jpeg" class="w-24 h-24 rounded-xl object-cover border-2 border-brand-accent/50 shadow-md" alt="Journal">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="font-bold text-brand-accent text-lg leading-tight uppercase tracking-tight">BONO 2: Diario de Rastreo Emocional (PDF)</h3>
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">Formato imprimible para procesar tu día sin retraumatizarte. Identifica patrones y celebra tus pequeñas victorias de regulación.</p>
+                    <div class="mt-4 flex items-center justify-center sm:justify-start gap-2">
+                        <span class="text-gray-500 line-through text-xs font-bold">$19 USD</span>
+                        <span class="text-success text-sm font-extrabold uppercase tracking-tighter">¡Regalo de Bienvenida!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-brand-accent/30 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 relative">
+                <div class="absolute -top-3 -right-3 bg-success text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">DISPONIBLE YA</div>
+                <div class="flex-shrink-0">
+                    <img src="https://images.pexels.com/photos/3768592/pexels-photo-3768592.jpeg" class="w-24 h-24 rounded-xl object-cover border-2 border-brand-accent/50 shadow-md" alt="Sueño">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="font-bold text-brand-accent text-lg leading-tight uppercase tracking-tight">BONO 3: Protocolo de Sueño Profundo</h3>
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">Rutinas nocturnas específicas para enviarle señales de seguridad a tu cerebro y lograr por fin un descanso reparador y sin alertas.</p>
+                    <div class="mt-4 flex items-center justify-center sm:justify-start gap-2">
+                        <span class="text-gray-500 line-through text-xs font-bold">$27 USD</span>
+                        <span class="text-success text-sm font-extrabold uppercase tracking-tighter">¡Cortesía Especial!</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white/5 p-6 rounded-2xl border-2 border-brand-accent/30 flex flex-col sm:flex-row items-center sm:items-start space-y-4 sm:space-y-0 sm:space-x-6 relative">
+                <div class="absolute -top-3 -right-3 bg-success text-white text-[10px] font-bold px-3 py-1 rounded-full shadow-lg">EL COMPLEMENTO IDEAL</div>
+                <div class="flex-shrink-0">
+                    <img src="https://images.pexels.com/photos/11278011/pexels-photo-11278011.jpeg" class="w-24 h-24 rounded-xl object-cover border-2 border-brand-accent/50 shadow-md" alt="Detox">
+                </div>
+                <div class="text-center sm:text-left">
+                    <h3 class="font-bold text-brand-accent text-lg leading-tight uppercase tracking-tight">BONO 4: Detox del Nervio Vago (7 Días)</h3>
+                    <p class="text-gray-300 text-sm mt-3 leading-relaxed">Calendario paso a paso con una micro-acción diaria de 3 minutos para resetear el estrés acumulado de toda tu semana.</p>
+                    <div class="mt-4 flex items-center justify-center sm:justify-start gap-2">
+                        <span class="text-gray-500 line-through text-xs font-bold">$24 USD</span>
+                        <span class="text-success text-sm font-extrabold uppercase tracking-tighter">¡100% Gratis!</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+ <section class="max-w-3xl mx-auto px-6 py-16" id="offer">
+    <div class="bg-white border-2 border-brand-primary p-8 md:p-12 rounded-3xl text-center shadow-xl relative overflow-hidden">
+        
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-dark mb-2 tracking-tight">Resumen de tu Inscripción</h2>
+        <p class="text-gray-500 mb-10 text-lg">Esto es todo lo que te llevas hoy:</p>
+        
+<div class="max-w-md mx-auto mb-10">
+            <ul class="space-y-5 text-left">
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>Academia Online:</strong> 33 Lecciones prácticas para resetear tu sistema nervioso.
+                    </span>
+                    <span class="text-gray-400 line-through font-bold ml-4">$97</span>
+                </li>
+
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>Libertad Total:</strong> Acceso inmediato y de por vida para que sanes a tu ritmo, sin presiones.
+                    </span>
+                    <span class="text-brand-primary font-bold text-xs uppercase tracking-tighter">Gratis</span>
+                </li>
+
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>Entrenamiento Interactivo:</strong> Ejercicios prácticos, Flashcards de calma y Quizzes de progreso.
+                    </span>
+                    <span class="text-gray-400 line-through font-bold ml-4">$47</span>
+                </li>
+
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>Guía "S.O.S - ¿Qué haría si...?":</strong> Soluciones rápidas para crisis de pánico o estrés en vivo.
+                    </span>
+                    <span class="text-brand-primary font-bold text-xs uppercase tracking-tighter">Incluido</span>
+                </li>
+
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>Tu Tribu Segura:</strong> Comunidad privada con otras chicas que entienden exactamente lo que sientes.
+                    </span>
+                    <span class="text-gray-400 line-through font-bold ml-4">$67</span>
+                </li>
+
+                <li class="flex justify-between items-start text-gray-800">
+                    <span class="text-base md:text-lg leading-snug">
+                        <span class="text-success font-bold">✓</span> <strong>4 Bonos de Regalo:</strong> Audios MP3, Diarios PDF, Protocolos de Sueño y Detox.
+                    </span>
+                    <span class="text-gray-400 line-through font-bold ml-4">$97</span>
+                </li>
+
+                <li class="flex justify-between items-center text-brand-primary font-bold text-lg md:text-xl pt-6 border-t border-dashed border-gray-300 mt-6">
+                    <span>VALOR REAL DE TODO:</span>
+                    <span class="line-through text-gray-400">$308.00</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-10">
+            <p class="text-brand-primary font-bold uppercase tracking-widest text-sm mb-2">Un único pago y acceso de por vida</p>
+            <div class="flex justify-center items-center gap-2">
+                <span class="text-6xl md:text-8xl font-black text-brand-dark tracking-tighter">$12.90</span>
+                <span class="text-2xl font-bold text-brand-dark uppercase">USD</span>
+            </div>
+            <p class="text-success font-bold text-lg mt-4">¡Ahorras un 93% hoy!</p>
+        </div>
+        
+       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+
+<div class="max-w-4xl mx-auto px-4 md:px-0">
+    <a href="LINK_DE_HOTMART_AQUI" 
+       style="font-family: 'Poppins', sans-serif;" 
+       class="block w-full bg-brand-accent text-white font-black py-6 rounded-xl text-xl md:text-3xl shadow-lg border-b-4 border-yellow-700 text-center uppercase tracking-tight active:translate-y-1">
+        SÍ, QUIERO MI ACCESO AHORA ➤
+    </a>
+    
+    <div class="mt-12 pt-8 border-t border-gray-100 flex flex-col md:flex-row items-center justify-between gap-10">
+        
+        <div class="text-center md:text-left max-w-sm">
+            <p class="font-black text-brand-dark text-lg uppercase mb-2 flex items-center justify-center md:justify-start">
+                <span class="mr-2">🛡️</span> Garantía de 7 días
+            </p>
+            <p class="text-gray-600 text-sm leading-relaxed px-4 md:px-0">
+                Prueba el curso y si sientes que no es para ti, te devolvemos tu dinero al 100%. Sin preguntas incómodas y con un solo clic.
+            </p>
+        </div>
+        
+        <div class="flex flex-col items-center md:items-end w-full md:w-auto">
+            <div class="flex gap-4 mb-3 opacity-60">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" class="h-5" alt="Visa">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" class="h-5" alt="Mastercard">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" class="h-5" alt="PayPal">
+            </div>
+            <p class="text-[11px] text-gray-400 font-bold uppercase tracking-widest text-center md:text-right">
+                Pago 100% Seguro vía Hotmart®
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+
+    <section class="max-w-4xl mx-auto px-6 py-12">
+        <div class="flex flex-col md:flex-row items-center bg-white p-8 md:p-10 rounded-2xl shadow-xl border border-gray-100">
+            <div class="relative mb-6 md:mb-0 md:mr-10 flex-shrink-0">
+                <div class="absolute inset-0 bg-brand-accent rounded-full transform translate-x-2 translate-y-2"></div>
+                <img src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=600&auto=format&fit=crop" alt="Sofia de Academia Renacer" class="relative w-40 h-40 rounded-full object-cover border-4 border-white shadow-md grayscale-[20%]">
+            </div>
+            
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold text-brand-dark mb-1">Hola, soy Sofía.</h3>
+                <p class="text-brand-accent font-bold text-xs uppercase mb-4 tracking-wider">La cara detrás de Academia Renacer"</p>
+                <div class="text-gray-600 text-sm space-y-4 leading-relaxed">
+                    <p>
+                        (Y alguien que sabe exactamente cómo te sientes). Quiero empezar siendo completamente honesta contigo: yo no tengo un título de psicología colgado en la pared ni una bata blanca de médico. Pero tengo algo que no se aprende en la universidad: yo estuve ahí. Soy una superviviente, igual que tú.
+                    </p>
+                    <p>
+                        Durante 10 años fui esa mujer que "podía con todo". Tenía el trabajo, la familia, la sonrisa puesta... pero por dentro, la ansiedad me estaba consumiendo. Pasé años en terapias tradicionales que me ayudaron a entender mi pasado, pero ninguna lograba detener mis taquicardias a las 3 de la mañana ni ese nudo constante en el estómago.
+                    </p>
+                    <p>
+                        Me cansé de solo "hablar" de mi dolor y empecé a buscar cómo sanarlo desde el cuerpo. Así nació esta Academia. Aquí no vas a encontrar teoría médica aburrida ni palabras complicadas. He filtrado y organizado solo las herramientas que realmente me devolvieron la vida. Te entrego un plan directo al grano, probado por mí, para que tú no tengas que pasar otros 10 años buscando la salida por tu cuenta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="max-w-3xl mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Preguntas Frecuentes</h2>
+        
+        <div class="space-y-4">
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    ¿Es un curso presencial u online?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    Es 100% online y digital. Al momento de inscribirte, recibes un correo con tus datos de acceso a nuestro portal privado de alumnos. Puedes entrar a cualquier hora, desde cualquier lugar del mundo. El acceso es de por vida.
+                </div>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    ¿Esto reemplaza la terapia psicológica?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    No. Este es un programa educativo de "Auto-Regulación" y afrontamiento. Es el complemento perfecto si ya vas a terapia (te ayudará a avanzar más rápido), pero no sustituye el diagnóstico ni el tratamiento médico profesional.
+                </div>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    No tengo mucho tiempo, ¿cuánto tarda?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    Diseñé esto para personas ocupadas y agotadas. Las lecciones duran entre 3 a 7 minutos. Puedes ir a tu propio ritmo cuando desees.
+                </div>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    ¿Es seguro pagar con mi tarjeta?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    Totalmente. Utilizamos Hotmart, la plataforma de productos digitales más grande y segura de Latinoamérica. Nosotros nunca tenemos acceso a los datos de tu tarjeta, todo está encriptado con seguridad bancaria.
+                </div>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    ¿Puedo verlo desde mi celular?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    Sí. Nuestra plataforma está optimizada para móviles. 
+                </div>
+            </details>
+
+            <details class="group bg-white p-5 rounded-xl shadow-sm cursor-pointer border border-gray-100 hover:border-brand-primary/30 transition">
+                <summary class="font-bold text-brand-dark flex justify-between items-center text-base md:text-lg">
+                    ¿Qué pasa si compro y siento que no es para mí?
+                    <span class="text-brand-primary text-xl group-open:rotate-180 transition transform">▼</span>
+                </summary>
+                <div class="mt-4 text-gray-600 text-sm leading-relaxed border-t pt-4">
+                    No hay problema. Tienes una <strong>Garantía Incondicional de 7 Días</strong>. Si entras, ves el contenido y sientes que no conecta contigo, simplemente solicitas el reembolso con un clic en la plataforma de Hotmart y te devolvemos el 100% de tu dinero. Sin preguntas incómodas.
+                </div>
+            </details>
+        </div>
+
+        <div class="text-center mt-16 mb-8">
+            <a href="LINK_DE_HOTMART_AQUI" class="inline-block bg-brand-primary hover:bg-brand-dark text-white font-bold py-5 px-12 rounded-full text-xl shadow-lg shadow-brand-primary/40 transition transform hover:-translate-y-1">
+                QUIERO EMPEZAR MI SANACIÓN AHORA
+            </a>
+            <p class="mt-3 text-xs text-gray-400">Compra 100% Segura • Garantía de Satisfacción</p>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark text-gray-400 py-16 px-6 text-xs text-center border-t border-white/10">
+        <div class="max-w-3xl mx-auto space-y-6">
+            <p class="font-bold text-white text-lg tracking-widest uppercase">Academia Renacer © 2025</p>
+            <p class="leading-relaxed text-gray-500 max-w-xl mx-auto">
+                <strong>AVISO LEGAL IMPORTANTE:</strong> El contenido de este programa ("Reseteo del Sistema Nervioso") es meramente educativo e informativo. No pretende dar consejo médico, diagnóstico, cura o tratamiento de ninguna enfermedad mental o física. Sofía no es psicóloga clínica, psiquiatra ni trabajadora social licenciada. Las técnicas compartidas se basan en investigación somática pública y experiencia personal de recuperación. Siempre busca el consejo de tu médico u otro proveedor de salud calificado ante cualquier duda sobre una condición médica. Nunca ignores el consejo médico profesional ni te demores en buscarlo debido a algo que hayas leído en este sitio web. Este sitio no es parte del sitio web de Facebook o Facebook Inc. Además, este sitio no está respaldado por Facebook de ninguna manera. FACEBOOK es una marca registrada de FACEBOOK, Inc.
+            </p>
+            <div class="flex justify-center gap-6 pt-4 text-brand-accent font-bold">
+                <a href="#" class="hover:text-white transition">Política de Privacidad</a>
+                <a href="#" class="hover:text-white transition">Términos de Uso</a>
+                <a href="#" class="hover:text-white transition">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
